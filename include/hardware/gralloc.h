@@ -247,25 +247,6 @@ typedef struct gralloc_module_t {
     int (*perform)(struct gralloc_module_t const* module,
             int operation, ... );
 
-    /*
-     * The (*lock_ycbcr)() method is like the (*lock)() method, with the
-     * difference that it fills a struct ycbcr with a description of the buffer
-     * layout, and zeroes out the reserved fields.
-     *
-     * This will only work on buffers with HAL_PIXEL_FORMAT_YCbCr_*_888, and
-     * will return -EINVAL on any other buffer formats.
-     *
-     * Added in GRALLOC_MODULE_API_VERSION_0_2.
-     */
-
-    int (*lock_ycbcr)(struct gralloc_module_t const* module,
-            buffer_handle_t handle, int usage,
-            int l, int t, int w, int h,
-            struct android_ycbcr *ycbcr);
-
-    /* reserved for future use */
-    void* reserved_proc[6];
-} gralloc_module_t;
 
 /*****************************************************************************/
 
