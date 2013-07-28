@@ -368,10 +368,6 @@ struct audio_policy_service_ops {
 #else 
                                     audio_in_acoustics_t acoustics);
 #endif
-
-    /* closes an audio input */
-    int (*close_input)(void *service, audio_io_handle_t input);
-
     /* */
     /* misc control functions */
     /* */
