@@ -247,7 +247,6 @@ typedef struct gralloc_module_t {
     int (*perform)(struct gralloc_module_t const* module,
             int operation, ... );
 
-#ifndef STE_HARDWARE
     /*
      * The (*lock_ycbcr)() method is like the (*lock)() method, with the
      * difference that it fills a struct ycbcr with a description of the buffer
@@ -267,8 +266,7 @@ typedef struct gralloc_module_t {
     /* reserved for future use */
     void* reserved_proc[6];
 } gralloc_module_t;
-#endif
-
+
 /*****************************************************************************/
 
 /**
